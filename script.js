@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
             listItem.textContent = taskText;
 
             const deleteButton = document.createElement("button");
-            deleteButton.textContent = "Delete";
+            deleteButton.textContent = "🗑️";
             deleteButton.addEventListener("click", function () {
                 removeTask(listItem);
             });

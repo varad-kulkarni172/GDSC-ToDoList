@@ -1,17 +1,18 @@
-/* Apply a basic layout and style to the page elements */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
+    background: radial-gradient(circle, turquoise, white);
+    margin: 100px;
     padding: 20px;
     text-align: center;
 }
 
 #task {
     padding: 5px;
-    width: 70%;
+    width: 50%;
     font-size: 16px;
     border: 1px solid #ccc;
+    border-radius: 12px;
+    margin-top: 50px;
 }
 
 #addButton {
@@ -21,6 +22,7 @@ body {
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 12px;
 }
 
 #addButton:hover {
@@ -30,7 +32,9 @@ body {
 #task-list {
     list-style-type: none;
     padding: 0;
-    margin: 20px 0;
+    margin: 80px;
+    margin-left: 500px;
+ 
 }
 
 li {
@@ -41,6 +45,8 @@ li {
     padding: 10px;
     border: 1px solid #ccc;
     margin: 5px 0;
+    border-radius: 12px;
+    width: 250px;
 }
 
 button {
@@ -49,8 +55,32 @@ button {
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+    border-radius: 40px;
 }
 
 button:hover {
     background-color: #c82333;
 }
+
+.typing-demo {
+    width: 22ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+    margin-left: 500px;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
