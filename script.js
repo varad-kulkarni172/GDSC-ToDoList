@@ -1,21 +1,28 @@
-function addTask() {
+document.addEventListener("DOMContentLoaded", function () {
     const taskInput = document.getElementById("task");
-    const taskText = taskInput.value.trim();
+    const addButton = document.getElementById("addButton");
+    const taskList = document.getElementById("task-list");
 
-    if (taskText !== "") {
-        const taskList = document.getElementById("task-list");
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `
-            ${taskText}
-            <button onclick="removeTask(this)">Delete</button>
-        `;
-        taskList.appendChild(listItem);
-        taskInput.value = "";
+    addButton.addEventListener("click", function () {
+        const taskText = taskInput.value.trim();
+
+        if (taskText !== "") {
+            const listItem = document.createElement("li");
+            listItem.textContent = taskText;
+
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.addEventListener("click", function () {
+                removeTask(listItem);
+            });
+
+            listItem.appendChild(deleteButton);
+            taskList.appendChild(listItem);
+            taskInput.value = "";
+        }
+    });
+
+    function removeTask(listItem) {
+        taskList.removeChild(listItem);
     }
-}
-
-function removeTask(button) {
-    const listItem = button.parentElement;
-    const taskList = listItem.parentElement;
-    taskList.removeChild(listItem);
-}
+});
