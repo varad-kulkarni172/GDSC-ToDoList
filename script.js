@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const taskInput = document.getElementById("task");
     const addButton = document.getElementById("addButton");
     const taskList = document.getElementById("task-list");
-    const completedList = document.getElementById("completed-list");
 
     addButton.addEventListener("click", function () {
         const taskText = taskInput.value.trim();
@@ -21,11 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const completeButton = document.createElement("button");
         completeButton.textContent = "✅";
         completeButton.addEventListener("click", function () {
-            completeTask(listItem);
+            toggleComplete(listItem);
         });
 
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "🗑️";
+        deleteButton.classList.add("delete"); // Add delete class for styling
         deleteButton.addEventListener("click", function () {
             deleteTask(listItem);
         });
@@ -35,17 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
         return listItem;
     }
 
-    function completeTask(listItem) {
-        taskList.removeChild(listItem);
-        completedList.appendChild(listItem);
-        listItem.classList.add("completed", "completed-enter");
+    function toggleComplete(listItem) {
+        listItem.classList.toggle("completed");
     }
 
     function deleteTask(listItem) {
-        if (taskList.contains(listItem)) {
-            taskList.removeChild(listItem);
-        } else if (completedList.contains(listItem)) {
-            completedList.removeChild(listItem);
-        }
+        taskList.removeChild(listItem);
     }
 });

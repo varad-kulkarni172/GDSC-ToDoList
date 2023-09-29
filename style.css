@@ -62,18 +62,14 @@ button:hover {
     background-color: #c82333;
 }
 
-/* Add a class for completed tasks */
+/* Apply animation when completed class is added */
 .completed {
-  text-decoration: line-through; /* Adds a line through completed tasks */
-  opacity: 0.6; /* Reduces the opacity of completed tasks */
-  transition: all 0.3s ease; /* Adds a smooth transition effect */
+  text-decoration: line-through;
+  opacity: 1;
+  transition: all 0.3s ease;
 }
 
-/* Apply animation when completed class is added */
-.completed-enter {
-  transform: translateX(0); /* Move completed tasks back onscreen */
-  transition-delay: 0.3s; /* Delay the animation slightly */
-}
+
 
 .typing-demo {
     width: 28ch;
