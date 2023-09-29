@@ -19,6 +19,7 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 12px;
+  background-color: lightblue;
 }
 
 #task-list {
@@ -48,10 +49,7 @@ button {
   text-decoration: line-through;
 }
 
-.typing-demo {
-  width: 100%;
-  margin-left: 0; /* Reset margin for smaller screens */
-}
+/*Later add the typing animation according to the resonsiveness */
 
 @media (min-width: 768px) {
   /* Styles for tablets and larger screens */
@@ -80,3 +78,4 @@ button {
       width: 300px;
   }
 }
+
