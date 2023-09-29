@@ -62,15 +62,28 @@ button:hover {
     background-color: #c82333;
 }
 
+/* Add a class for completed tasks */
+.completed {
+  text-decoration: line-through; /* Adds a line through completed tasks */
+  opacity: 0.6; /* Reduces the opacity of completed tasks */
+  transition: all 0.3s ease; /* Adds a smooth transition effect */
+}
+
+/* Apply animation when completed class is added */
+.completed-enter {
+  transform: translateX(0); /* Move completed tasks back onscreen */
+  transition-delay: 0.3s; /* Delay the animation slightly */
+}
+
 .typing-demo {
-    width: 22ch;
+    width: 28ch;
     animation: typing 2s steps(22), blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
     font-family: monospace;
     font-size: 2em;
-    margin-left: 500px;
+    margin-left: 450px;
   }
   
   @keyframes typing {
