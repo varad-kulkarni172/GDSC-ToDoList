@@ -32,6 +32,8 @@ body {
 }
 
 li {
+  display: inline-block;
+  text-align: center;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 12px;
@@ -47,6 +49,15 @@ button.delete {
   padding: 10px 20px;
   border-radius: 40px;
 }
+button.check {
+  padding : 5px 10px;
+  border-radius: 40px;
+}
+
+.completed-task label {
+  text-decoration: line-through;
+}
+
 
 .typing-demo {
   width: 80%;

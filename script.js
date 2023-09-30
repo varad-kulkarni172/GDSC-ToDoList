@@ -15,7 +15,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function createTaskElement(taskText) {
         const listItem = document.createElement("li");
-        listItem.textContent = taskText;
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.addEventListener("change", function () {
+            if (checkbox.checked) {
+                listItem.classList.add("completed-task"); // Add the class if checkbox is checked
+            } else {
+                listItem.classList.remove("completed-task"); // Remove the class if checkbox is unchecked
+            }
+        });
+
+        const taskLabel = document.createElement("label");
+        taskLabel.textContent = taskText;
 
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "🗑️";
@@ -24,7 +36,10 @@ document.addEventListener("DOMContentLoaded", function () {
             deleteTask(listItem);
         });
 
+        listItem.appendChild(checkbox);
+        listItem.appendChild(taskLabel);
         listItem.appendChild(deleteButton);
+
         return listItem;
     }
 
