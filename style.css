@@ -1,18 +1,18 @@
 body {
   font-family: Arial, sans-serif;
   background: radial-gradient(circle, turquoise, white);
-  margin: 20px; /* Adjusted margin for smaller screens */
-  padding: 10px; /* Adjusted padding for smaller screens */
+  margin: 20px;
+  padding: 10px;
   text-align: center;
 }
 
 #task {
   padding: 10px;
-  width: 80%; /* Adjusted input width for smaller screens */
+  width: 80%;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 12px;
-  margin-top: 20px; /* Adjusted margin for smaller screens */
+  margin-top: 20px;
 }
 
 #addButton {
@@ -29,45 +29,33 @@ body {
 }
 
 li {
-  display: flex;
-  flex-direction: column; /* Stack elements vertically on smaller screens */
   background-color: white;
   padding: 10px;
   border: 1px solid #ccc;
   margin: 5px 0;
   border-radius: 12px;
-  width: 100%; /* Make list items fill the width on smaller screens */
+  width: 100%;
 }
 
-button {
+button.delete {
   padding: 10px 20px;
   border-radius: 40px;
 }
 
-/* Apply animation when completed class is added */
-.completed {
-  text-decoration: line-through;
-}
-
-/*Later add the typing animation according to the resonsiveness */
-
 @media (min-width: 768px) {
-  /* Styles for tablets and larger screens */
   #task {
       width: 50%;
   }
 
   li {
-      flex-direction: row; /* Display elements in a row on larger screens */
       width: 250px;
   }
 }
 
 @media (min-width: 992px) {
-  /* Styles for desktop screens */
   body {
-      margin: 50px; /* Adjusted margin for larger screens */
-      padding: 20px; /* Adjusted padding for larger screens */
+      margin: 50px;
+      padding: 20px;
   }
 
   #task {
@@ -78,4 +66,3 @@ button {
       width: 300px;
   }
 }
-

@@ -17,12 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const listItem = document.createElement("li");
         listItem.textContent = taskText;
 
-        const completeButton = document.createElement("button");
-        completeButton.textContent = "✅";
-        completeButton.addEventListener("click", function () {
-            toggleComplete(listItem);
-        });
-
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "🗑️";
         deleteButton.classList.add("delete"); // Add delete class for styling
@@ -30,13 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
             deleteTask(listItem);
         });
 
-        listItem.appendChild(completeButton);
         listItem.appendChild(deleteButton);
         return listItem;
-    }
-
-    function toggleComplete(listItem) {
-        listItem.classList.toggle("completed");
     }
 
     function deleteTask(listItem) {
