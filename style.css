@@ -8,11 +8,13 @@ body {
 
 #task {
   padding: 10px;
-  width: 80%;
+  width: calc(100% - 40px); /* Adjusted width for smaller screens */
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 12px;
   margin-top: 20px;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
 #addButton {
@@ -20,21 +22,26 @@ body {
   font-size: 16px;
   border-radius: 12px;
   background-color: lightblue;
+  margin-top: 10px;
 }
 
 #task-list {
   list-style-type: none;
   padding: 0;
   margin: 20px;
+  text-align: left;
 }
 
 li {
   background-color: white;
-  padding: 10px;
   border: 1px solid #ccc;
-  margin: 5px 0;
   border-radius: 12px;
-  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  width: calc(100% - 22px); /* Adjusted width for smaller screens */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 button.delete {
@@ -42,27 +49,53 @@ button.delete {
   border-radius: 40px;
 }
 
+.typing-demo {
+  width: 80%;
+  max-width: 28ch;
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Keyframes for Typing Animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 @media (min-width: 768px) {
   #task {
-      width: 50%;
+    width: calc(50% - 40px); /* Adjusted width for tablets and larger screens */
   }
-
+  
   li {
-      width: 250px;
+    width: calc(50% - 22px);
   }
 }
 
 @media (min-width: 992px) {
   body {
-      margin: 50px;
-      padding: 20px;
+    margin: 50px;
+    padding: 20px;
   }
 
   #task {
-      width: 40%;
+    width: calc(40% - 40px); /* Adjusted width for desktop screens */
   }
 
   li {
-      width: 300px;
+    width: calc(40% - 22px);
   }
 }
