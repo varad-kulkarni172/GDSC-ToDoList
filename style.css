@@ -27,8 +27,7 @@ body {
 
 #task-list {
   list-style-type: none;
-  padding: 0;
-  margin: 20px;
+  margin-left: 450px;
   text-align: left;
 }
 
@@ -38,7 +37,7 @@ li {
   border-radius: 12px;
   margin-top: 5px;
   padding: 10px;
-  width: calc(100% - 22px); /* Adjusted width for smaller screens */
+  width: calc(100% - 22px);
   display: flex;
   align-items: center;
   justify-content: space-between;
