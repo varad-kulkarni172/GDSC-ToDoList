@@ -3,12 +3,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const addButton = document.getElementById("addButton");
     const taskList = document.getElementById("task-list");
 
+    // Load tasks from localStorage when the page loads
+    const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    savedTasks.forEach(taskText => {
+        const listItem = createTaskElement(taskText);
+        taskList.appendChild(listItem);
+    });
+
     addButton.addEventListener("click", function () {
         const taskText = taskInput.value.trim();
 
         if (taskText !== "") {
             const listItem = createTaskElement(taskText);
             taskList.appendChild(listItem);
+
+            // Save tasks to localStorage
+            const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+            tasks.push(taskText);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+
             taskInput.value = "";
         }
     });
@@ -20,9 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
         checkbox.type = "checkbox";
         checkbox.addEventListener("change", function () {
             if (checkbox.checked) {
-                listItem.classList.add("completed-task"); // Add the class if checkbox is checked
+                listItem.classList.add("completed-task");
             } else {
-                listItem.classList.remove("completed-task"); // Remove the class if checkbox is unchecked
+                listItem.classList.remove("completed-task");
             }
         });
 
@@ -31,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "🗑️";
-        deleteButton.classList.add("delete"); // Add delete class for styling
+        deleteButton.classList.add("delete");
         deleteButton.addEventListener("click", function () {
-            deleteTask(listItem);
+            deleteTask(listItem, taskText);
         });
 
         listItem.appendChild(checkbox);
@@ -43,7 +56,12 @@ document.addEventListener("DOMContentLoaded", function () {
         return listItem;
     }
 
-    function deleteTask(listItem) {
+    function deleteTask(listItem, taskText) {
         taskList.removeChild(listItem);
+
+        // Remove task from localStorage
+        const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        const updatedTasks = tasks.filter(task => task !== taskText);
+        localStorage.setItem("tasks", JSON.stringify(updatedTasks));
     }
 });
