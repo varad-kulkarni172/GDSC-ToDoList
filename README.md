@@ -7,4 +7,10 @@ Date and time : 30-Oct-2023  10:35
 Issues resolved : User can tick and untick their entered task accordingly.
 Issues encountered : Lacks a bit in responsivness and the task list has some weird bug if you don't use space in between (Can be easily ignored for the time being).
 
-Updated the UI a bit 
+Date and time : 02-Oct-2023
+Updated the UI a bit
+Issues encountered : Lacks a bit in responsivness and the task list has some weird bug if you don't use space in between (Can be easily ignored for the time being).
+
+Date and time : 03-0ct-2023
+Finally created a local storage as my database for this project and hosted it on github.
+Issues encountered : Lack in responsivness a bit and the rest is same.
