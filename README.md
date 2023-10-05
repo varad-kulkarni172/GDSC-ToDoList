@@ -14,3 +14,6 @@ Issues encountered : Lacks a bit in responsivness and the task list has some wei
 Date and time : 03-0ct-2023
 Finally created a local storage as my database for this project and hosted it on github.
 Issues encountered : Lack in responsivness a bit and the rest is same.
+
+Data and time : 04-Oct-2023
+Done with the interviews and everything . 
