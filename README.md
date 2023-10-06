@@ -1,5 +1,8 @@
 # GDSC-ToDoList
 The pre interview task
+
+In order to access this website you can click on the above link.
+In order to access your data you can inspect element and click on the application section and under the Local Storage section.
 Date and time :  30-Oct-2023  6:30
 Issues encountered : Lacks a bit in responsivness and the task list doesnt get responsive if the task entered is long.
 
