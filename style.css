@@ -4,6 +4,7 @@ body {
   margin: 20px;
   padding: 10px;
   text-align: center;
+  aspect-ratio: 3/2;
 }
 
 #task {
@@ -15,6 +16,7 @@ body {
   margin-top: 20px;
   display: inline-block;
   box-sizing: border-box;
+  
 }
 
 #addButton {
@@ -23,12 +25,14 @@ body {
   border-radius: 12px;
   background-color: lightblue;
   margin-top: 10px;
+  
 }
 
 #task-list {
   list-style-type: none;
   margin-left: 450px;
   text-align: left;
+  
 }
 
 li {
@@ -43,19 +47,23 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 button.delete {
   padding: 10px 20px;
   border-radius: 40px;
+  
 }
 button.check {
   padding : 5px 10px;
   border-radius: 40px;
+  
 }
 
 .completed-task label {
   text-decoration: line-through;
+  
 }
 
 
@@ -70,6 +78,7 @@ button.check {
   font-size: 2em;
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 /* Keyframes for Typing Animation */
